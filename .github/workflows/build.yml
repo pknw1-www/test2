@@ -24,7 +24,7 @@ on:
         options:
           - simple
           - proxied
-        '
+    
 jobs:
   docker_build:
     runs-on: ubuntu-latest
