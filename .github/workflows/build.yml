@@ -14,10 +14,16 @@ on:
         default: 'latest'
       hostname:
         description: 'docker container hostname'
-        default: 'maveriwkcwww'
+        default: 'mav.pknw1.co.uk'
       hostport:
         description: 'internal container http port'
         default: '80
+      deploy_stack:
+        description: 'Components to include'
+        type: choice
+        options:
+          - simple
+          - proxied
         '
 jobs:
   docker_build:
@@ -38,8 +44,19 @@ jobs:
           with-owner: 'false'
           string-case: 'lowercase'
       - name: create docker-compose
+        if: ${{ inputs.deploy_stack == 'simple' }}
         run: | 
+          echo " - [X] using simple stack with caddy only on HTTP 80 " >> $GITHUB_STEP_SUMMARY
+          cp deploy/docker-compose-simple.yml deploy/docker-compose.yml
+      - name: create docker-compose
+        if: ${{ inputs.deploy_stack == 'proxied' }}
+        run: | 
+          echo " - [X] using proxied stack with nginx reverse proxy on 80/443" >> $GITHUB_STEP_SUMMARY
+          echo " - [X] using letsencrypt sidecar fro SSL certs" >> $GITHUB_STEP_SUMMARY
+          echo " - [X] using caddy as proxy backend under virtual host ${{ inputs.hostname }}" >> $GITHUB_STEP_SUMMARY
           cp deploy/docker-compose-orig.yml deploy/docker-compose.yml
+      - name: create docker-compose
+        run: | 
           echo " - [X] Create docker-compose.yml" >> $GITHUB_STEP_SUMMARY
           sed -i 's/REPO_NAME/${{ steps.repo-name.outputs.repo-name }}/g' deploy/docker-compose.yml
           sed -i 's/DOCKER_USER/${{ inputs.docker_user }}/g' deploy/docker-compose.yml
@@ -75,4 +92,4 @@ jobs:
           echo " " >> $GITHUB_STEP_SUMMARY
           echo "extract zip file for docker-compose.yml" >> $GITHUB_STEP_SUMMARY
           echo "extract image.tar from docker-image.zip" >> $GITHUB_STEP_SUMMARY
-          echo "import archive using ```docker import image1.tar  ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }} ``` " >> $GITHUB_STEP_SUMMARY
+          echo "import archive using docker import image1.tar  ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }}  " >> $GITHUB_STEP_SUMMARY
