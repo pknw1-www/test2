@@ -1,0 +1,47 @@
+name: 03 - Build & Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker_image:
+        description: 'docker image and tag'
+        default: 'pknw1\/maverick:latest'
+      hostname:
+        description: 'docker container hostname'
+        default: 'maveriwkcwww'
+jobs:
+  docker_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get repository name
+        id: repo-name
+        uses: MariachiBear/get-repo-name-action@v1.1.0
+        with:
+          with-owner: 'false'
+          string-case: 'lowercase'
+      - name: create docker-compose
+        run: | 
+          cp deploy/docker-compose-orig.yml deploy/docker-compose.yml
+          sed -i 's/REPO_NAME/${{ steps.repo-name.outputs.repo-name }}/g' deploy/docker-compose.yml
+          sed -i 's/DOCKER_IMAGE/${{ inputs.docker_image }}/g' deploy/docker-compose.yml
+          sed -i 's/HOSTNAME/${{ inputs.hostname }}/g' deploy/docker-compose.yml
+      - name: Build and push Docker images
+        run: |
+          TIMESTAMP=$(date +%s)
+          echo ${TIMESTAMP} > build/publish/version.html
+          cd build
+          docker build -t ${{ inputs.docker_image }} .
+      - name: export image
+        run: |
+          docker save -o image.tar ${{ inputs.docker_image }}
+          find . -type f -iname '*tar'
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docker-compose
+          path: 'deploy/docker-compose.yml'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docker-image
+          path: 'image.tar'
