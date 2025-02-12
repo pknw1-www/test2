@@ -53,13 +53,13 @@ jobs:
           TIMESTAMP=$(date +%s)
           echo ${TIMESTAMP} > build/publish/version.html
           cd build
-          docker build -t ${{ docker_user }}/${{ inputs.docker_image }}:${{ docker_image_tag }} .
+          docker build -t ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }} .
           IMAGE_SIZE=$(docker image ls | grep ${{ inputs.docker_image }} | grep ${{ inputs.docker_image_tag }} | awk '{print $NF}')
-          echo " - [X] Create docker image ${{ docker_user }}/${{ inputs.docker_image }}:${{ docker_image_tag }} - ${IMAGE_SIZE} " >> $GITHUB_STEP_SUMMARY
+          echo " - [X] Create docker image ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }} - ${IMAGE_SIZE} " >> $GITHUB_STEP_SUMMARY
       - name: export image
         run: |
-          docker save -o image.tar ${{ docker_user }}/${{ inputs.docker_image }}:${{ docker_image_tag }}
-          echo " - [X] Export docker image ${{ docker_user }}/${{ inputs.docker_image }}:${{ docker_image_tag }} as image.tar " >> $GITHUB_STEP_SUMMARY
+          docker save -o image.tar ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }}
+          echo " - [X] Export docker image ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }} as image.tar " >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         with:
           name: docker-compose
@@ -75,4 +75,4 @@ jobs:
           echo " " >> $GITHUB_STEP_SUMMARY
           echo "extract zip file for docker-compose.yml" >> $GITHUB_STEP_SUMMARY
           echo "extract image.tar from docker-image.zip" >> $GITHUB_STEP_SUMMARY
-          echo "import archive using ```docker import image1.tar  ${{ docker_user }}/${{ inputs.docker_image }}:${{ docker_image_tag }} ``` " >> $GITHUB_STEP_SUMMARY
+          echo "import archive using ```docker import image1.tar  ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_image_tag }} ``` " >> $GITHUB_STEP_SUMMARY
