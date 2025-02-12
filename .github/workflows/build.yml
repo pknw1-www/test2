@@ -17,14 +17,13 @@ on:
         default: 'mav.pknw1.co.uk'
       hostport:
         description: 'internal container http port'
-        default: '80
+        default: '80'
       deploy_stack:
         description: 'Components to include'
         type: choice
         options:
           - simple
           - proxied
-        '
 jobs:
   docker_build:
     runs-on: ubuntu-latest
