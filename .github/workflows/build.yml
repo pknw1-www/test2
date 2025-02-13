@@ -36,59 +36,10 @@ jobs:
           echo "started at "${TIMESTAMP}  >> $GITHUB_STEP_SUMMARY
           echo " " >> $GITHUB_STEP_SUMMARY
       - uses: actions/checkout@v3
-      - name: Get repository name
-        id: repo-name
-        uses: MariachiBear/get-repo-name-action@v1.1.0
-        with:
-          with-owner: 'false'
-          string-case: 'lowercase'
-      - name: create docker-compose
-        if: ${{ inputs.deploy_stack == 'simple' }}
-        run: | 
-          echo " - [X] using simple stack with caddy only on HTTP 80 " >> $GITHUB_STEP_SUMMARY
-          cp deploy/docker-compose-simple.yml deploy/docker-compose.yml
-      - name: create docker-compose
-        if: ${{ inputs.deploy_stack == 'proxied' }}
-        run: | 
-          echo " - [X] using proxied stack with nginx reverse proxy on 80/443" >> $GITHUB_STEP_SUMMARY
-          echo " - [X] using letsencrypt sidecar fro SSL certs" >> $GITHUB_STEP_SUMMARY
-          echo " - [X] using caddy as proxy backend under virtual host ${{ inputs.hostname }}" >> $GITHUB_STEP_SUMMARY
-          cp deploy/docker-compose-orig.yml deploy/docker-compose.yml
-      - name: create docker-compose
-        run: | 
-          echo " - [X] Create docker-compose.yml" >> $GITHUB_STEP_SUMMARY
-          sed -i 's/REPO_NAME/${{ steps.repo-name.outputs.repo-name }}/g' deploy/docker-compose.yml
-          sed -i 's/DOCKER_USER/${{ inputs.docker_user }}/g' deploy/docker-compose.yml
-          sed -i 's/DOCKER_IMAGE/${{ inputs.docker_image }}/g' deploy/docker-compose.yml
-          sed -i 's/DOCKER_TAG/${{ inputs.docker_tag }}/g' deploy/docker-compose.yml
-          sed -i 's/VIRTUAL_PORT_SED/${{ inputs.hostport }}/g' deploy/docker-compose.yml
-          sed -i 's/HOSTNAME/${{ inputs.hostname }}/g' deploy/docker-compose.yml
-          echo " - [X] Updated docker-compose.yml" >> $GITHUB_STEP_SUMMARY
-      - name: Build and push Docker images
-        run: |
-          TIMESTAMP=$(date +%s)
-          echo ${TIMESTAMP} > build/publish/version.html
-          cd build
-          docker build -t ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_tag }} .
-          IMAGE_SIZE=$(docker image ls | grep ${{ inputs.docker_image }} | grep ${{ inputs.docker_tag }} | awk '{print $NF}')
-          echo " - [X] Create docker image ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_tag }} - ${IMAGE_SIZE} " >> $GITHUB_STEP_SUMMARY
-      - name: export image
-        run: |
-          docker save -o image.tar ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_tag }}
-          echo " - [X] Export docker image ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_tag }} as image.tar " >> $GITHUB_STEP_SUMMARY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: docker-compose
-          path: 'deploy/docker-compose.yml'
-      - run: | 
-          echo " - [X] attached docker-compose.zip as artifact " >> $GITHUB_STEP_SUMMARY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: docker-image
-          path: 'image.tar'
-      - run: | 
-          echo " - [X] attached docker-image.zip as artifact " >> $GITHUB_STEP_SUMMARY
-          echo " " >> $GITHUB_STEP_SUMMARY
-          echo "extract zip file for docker-compose.yml" >> $GITHUB_STEP_SUMMARY
-          echo "extract image.tar from docker-image.zip" >> $GITHUB_STEP_SUMMARY
-          echo "import archive using docker import image1.tar  ${{ inputs.docker_user }}/${{ inputs.docker_image }}:${{ inputs.docker_tag }}  " >> $GITHUB_STEP_SUMMARY
+      - run: |
+          cat << EOF >> testfile
+          pk
+          pk2
+          pk3
+          EOF
+          
