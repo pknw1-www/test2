@@ -42,4 +42,13 @@ jobs:
           pk2
           pk3
           EOF
-          
+      - run: |
+          ls -lR
+          cat testfile
+      - run: |
+          cat << EOF >>testfile
+          test3
+          test4
+          EOF
+      - run: | 
+          cat testfile
