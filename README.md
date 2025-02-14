@@ -15,7 +15,7 @@
 - [ ] this will create a docker image (named as you input)
 - [ ] once completed click on the Workflow summary and you'll see 2 artifacts
 
-## publish (3rd Party)
+## publish (3rd Party)sdfsdfsfdsdfsd
 - [X] download the docker-compose zip and extract itdfgdfgfd
 - [ ] download the docker-image zip and extract it
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tar
