@@ -6,7 +6,7 @@
 ## publish (Mobirise)
 - [X] clone to local machines
 - [X] checkout a new branch
-- [X] publish web content into the ```publish``` folder
+- [X] publish web content into the ```publish``` foldersss
 - [x] verify pusha
 - [X] merge into main when happy
 - [X] execute the build github action
