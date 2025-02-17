@@ -17,7 +17,7 @@
 
 ## publish (3rd Party)sdfsdfsfdsdfsd
 - [X] download the docker-compose zip and extract itdfgdfgfd
-- [ ] download the docker-image zip and extract it
+- [ ] download the docker-image zip and extract its
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tar
 
 as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgf
