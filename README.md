@@ -18,7 +18,7 @@ ss
 ## publish (3rd Party)sdfsdfsfdsdfsd
 - [X] download the docker-compose zip and extract itdfgdfgfdss
 - [ ] download the docker-image zip and extract its
-- [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tar
+- [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tars
 a
 as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgfad
 the container will run and serve your content from buildpublish
