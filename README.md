@@ -13,10 +13,10 @@
 - [ ]   VEFY IMPORTANT - the image name has to escape the slash in the image name so it should be ```maverick1542\/web:latest```
 - [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgd
 - [ ] this will create a docker image (named as you input)sss
-- [ ] once completed click on the Workflow summary and you'll see 2 artifacts
+- [ ] once completed click on the Workflow summary and you'll see 2 artifactssss
 ssa
 ## publish (3rd Party)sdfsdfsfdsdfsds
-- [X] download the docker-compose zip and extract itdfgdfgfdsssa
+- [X] download the docker-compose zip and extract s
 - [ ] download the docker-image zip and extract its
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tars
 a
