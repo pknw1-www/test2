@@ -26,7 +26,7 @@ currently confiugred to expose port 8888 - this can be changeds
 ..
 http://localhost:8888/s
 
-```
+```s
 services:
   maverick1542:a
     image: maverick1542/web:latest
