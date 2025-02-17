@@ -4,7 +4,7 @@
 - [X] Create a repository from the template
 
 ## publish (Mobirise)
-- [X] clone to local machines
+- [X] clone to local machinesa
 - [X] checkout a new branch
 - [X] publish web content into the ```publish``` foldersss
 - [x] verify pusha
