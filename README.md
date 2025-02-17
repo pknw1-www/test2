@@ -21,7 +21,7 @@ ssa
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tarsaaasssa
 as
 as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgfadss
-the container will run and serve your content from buildpublish
+the container will run and serve your content from buildpublishs
 currently confiugred to expose port 8888 - this can be changeds
 ..aa
 http://localhost:8888/s
