@@ -16,7 +16,7 @@
 - [ ] once completed click on the Workflow summary and you'll see 2 artifactsssskoko
 ssa
 ## publish (3rd Party)sdfsdfsfdsdfsdsaa
-- [X] download the docker-compose zip and extract sss
+- [X] download the docker-compose zip and extract sssa
 - [ ] download the docker-image zip and extract its
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tarsaaasssa
 as
