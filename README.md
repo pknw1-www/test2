@@ -11,7 +11,7 @@
 - [X] merge into main when happy
 - [X] execute the build github action
 - [ ]   VEFY IMPORTANT - the image name has to escape the slash in the image name so it should be ```maverick1542\/web:latest```a
-- [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgd
+- [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgda
 - [ ] this will create a docker image (named as you input)sss
 - [ ] once completed click on the Workflow summary and you'll see 2 artifactsssskoko
 ssa
