@@ -25,7 +25,7 @@ the container will run and serve your content from buildpublish
 currently confiugred to expose port 8888 - this can be changeds
 ..
 http://localhost:8888/s
-
+a
 ```s
 services:
   maverick1542:a
