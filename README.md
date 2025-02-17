@@ -19,7 +19,7 @@ ssa
 - [X] download the docker-compose zip and extract sss
 - [ ] download the docker-image zip and extract its
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tarsaaasssa
-a
+as
 as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgfadss
 the container will run and serve your content from buildpublish
 currently confiugred to expose port 8888 - this can be changeds
