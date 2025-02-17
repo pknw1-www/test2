@@ -7,7 +7,7 @@
 - [X] clone to local machine
 - [X] checkout a new branch
 - [X] publish web content into the ```publish``` folder
-- [x] verify push
+- [x] verify pusha
 - [X] merge into main when happy
 - [X] execute the build github action
 - [ ]   VEFY IMPORTANT - the image name has to escape the slash in the image name so it should be ```maverick1542\/web:latest```
