@@ -14,7 +14,7 @@
 - [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgd
 - [ ] this will create a docker image (named as you input)
 - [ ] once completed click on the Workflow summary and you'll see 2 artifacts
-
+s
 ## publish (3rd Party)sdfsdfsfdsdfsd
 - [X] download the docker-compose zip and extract itdfgdfgfd
 - [ ] download the docker-image zip and extract its
