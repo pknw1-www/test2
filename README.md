@@ -13,7 +13,7 @@
 - [ ]   VEFY IMPORTANT - the image name has to escape the slash in the image name so it should be ```maverick1542\/web:latest```a
 - [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgd
 - [ ] this will create a docker image (named as you input)sss
-- [ ] once completed click on the Workflow summary and you'll see 2 artifactssss
+- [ ] once completed click on the Workflow summary and you'll see 2 artifactsssskoko
 ssa
 ## publish (3rd Party)sdfsdfsfdsdfsdsaa
 - [X] download the docker-compose zip and extract sss
