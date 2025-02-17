@@ -28,7 +28,7 @@ http://localhost:8888/
 
 ```
 services:
-  maverick1542:
+  maverick1542:a
     image: maverick1542/web:latest
     container_name: web
     hostname: web
