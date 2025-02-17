@@ -4,7 +4,7 @@
 - [X] Create a repository from the template
 
 ## publish (Mobirise)
-- [X] clone to local machine
+- [X] clone to local machines
 - [X] checkout a new branch
 - [X] publish web content into the ```publish``` folder
 - [x] verify pusha
@@ -14,7 +14,7 @@
 - [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgd
 - [ ] this will create a docker image (named as you input)
 - [ ] once completed click on the Workflow summary and you'll see 2 artifacts
-s
+ss
 ## publish (3rd Party)sdfsdfsfdsdfsd
 - [X] download the docker-compose zip and extract itdfgdfgfdss
 - [ ] download the docker-image zip and extract its
