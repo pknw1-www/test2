@@ -20,7 +20,7 @@ ss
 - [ ] download the docker-image zip and extract its
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tar
 a
-as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgfa
+as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgfad
 the container will run and serve your content from buildpublish
 currently confiugred to expose port 8888 - this can be changeds
 ..
