@@ -16,7 +16,7 @@
 - [ ] once completed click on the Workflow summary and you'll see 2 artifacts
 ssa
 ## publish (3rd Party)sdfsdfsfdsdfsds
-- [X] download the docker-compose zip and extract itdfgdfgfdss
+- [X] download the docker-compose zip and extract itdfgdfgfdsss
 - [ ] download the docker-image zip and extract its
 - [ ] import the archive to your docker images with ```docker import <your_image>:latest' < image.tars
 a
