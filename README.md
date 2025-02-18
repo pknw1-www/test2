@@ -23,7 +23,7 @@ as
 as long as the image name matches the docker composr fileyou can start with ```docker compose up -d```fdgdfgfadssnss
 the container will run and serve your content from buildpublishs
 currently confiugred to expose port 8888 - this can be changeds
-..aa
+..aa 
 http://localhost:8888/s
 a
 ```s
