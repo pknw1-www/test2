@@ -1,7 +1,7 @@
  # template-docker-www
 
 ## setup
-- [X] Create a repository from the template
+- [X] Create a repository from the templatew
 
 ## publish (Mobirise)
 - [X] clone to local machinesa
