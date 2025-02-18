@@ -8,7 +8,7 @@
 - [X] checkout a new branch
 - [X] publish web content into the ```publish``` foldersss
 - [x] verify pushas
-- [X] merge into main when happy
+- [X] merge into main when happys
 - [X] execute the build github actions 
 - [ ]   VEFY IMPORTANT - the image name has to escape the slash in the image name so it should be ```maverick1542\/web:latest```a
 - [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgdas
