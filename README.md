@@ -12,7 +12,7 @@
 - [X] execute the build github actions 
 - [ ]   VEFY IMPORTANT - the image name has to escape the slash in the image name so it should be ```maverick1542\/web:latest```a
 - [ ] this will ctreatem a ```docker-compose.yml``` filedfggfdgfgdffgdas
-- [ ] this will create a docker image (named as you input)ssss 
+- [ ] this will create a docker image (named as you input)ssss ss
 - [ ] once completed click on the Workflow summary and you'll see 2 artifactsssskokoss
 ssa
 ## publish (3rd Party)sdfsdfsfdsdfsdsaaa
